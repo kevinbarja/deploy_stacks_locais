@@ -1,6 +1,6 @@
 services:
   n8n_editor:
-    image: n8nio/n8n:1.80.5
+    image: n8nio/n8n:1.100.1
     ports:
       - "5678:5678"      # Expondo a porta do editor
     volumes:
@@ -11,6 +11,7 @@ services:
     restart: always 
  
     environment:
+      DB_TYPE: postgresdb
       DB_POSTGRESDB_PORT: 5432
       DB_POSTGRESDB_HOST: postgres
       DB_POSTGRESDB_DATABASE: n8n_fila
@@ -34,7 +35,7 @@ services:
 
       
   n8n_webhook:
-    image: n8nio/n8n:1.80.5
+    image: n8nio/n8n:1.100.1
     command: webhook
     volumes:
       - n8n_data:/home/node/.n8n
@@ -44,6 +45,7 @@ services:
   
     
     environment:
+      DB_TYPE: postgresdb
       DB_POSTGRESDB_PORT: 5432
       DB_POSTGRESDB_HOST: postgres
       DB_POSTGRESDB_DATABASE: n8n_fila
@@ -66,7 +68,7 @@ services:
       N8N_SECURE_COOKIE: "false"    
 
   n8n_worker:
-    image: n8nio/n8n:1.80.5
+    image: n8nio/n8n:1.100.1
     command: worker --concurrency=5
     volumes:
       - n8n_data:/home/node/.n8n
@@ -74,6 +76,7 @@ services:
       - app_network
     restart: always 
     environment:
+      DB_TYPE: postgresdb
       DB_POSTGRESDB_PORT: 5432
       DB_POSTGRESDB_HOST: postgres
       DB_POSTGRESDB_DATABASE: n8n_fila
