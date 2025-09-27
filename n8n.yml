@@ -27,11 +27,14 @@ services:
       QUEUE_BULL_REDIS_HOST: redis
       QUEUE_BULL_REDIS_PORT: 6379
       QUEUE_BULL_REDIS_DB: 2
-      NODE_FUNCTION_ALLOW_EXTERNAL: moment,lodash,moment-with-locales
+      NODE_FUNCTION_ALLOW_EXTERNAL: moment
       EXECUTIONS_DATA_PRUNE: 'true'
       EXECUTIONS_DATA_MAX_AGE: 336
       N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: 'true'
       N8N_SECURE_COOKIE: "false"
+      N8N_RUNNERS_ENABLED: "true"
+      N8N_RUNNERS_MODE: internal
+      OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS: "true"
 
       
   n8n_webhook:
@@ -61,11 +64,14 @@ services:
       QUEUE_BULL_REDIS_HOST: redis
       QUEUE_BULL_REDIS_PORT: 6379
       QUEUE_BULL_REDIS_DB: 2
-      NODE_FUNCTION_ALLOW_EXTERNAL: moment,lodash,moment-with-locales
+      NODE_FUNCTION_ALLOW_EXTERNAL: moment
       EXECUTIONS_DATA_PRUNE: 'true'
       EXECUTIONS_DATA_MAX_AGE: 336
       N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: 'true'
-      N8N_SECURE_COOKIE: "false"    
+      N8N_SECURE_COOKIE: "false"  
+      N8N_RUNNERS_ENABLED: "true"
+      N8N_RUNNERS_MODE: internal
+      OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS: "true"
 
   n8n_worker:
     image: n8nio/n8n:1.100.1
@@ -92,11 +98,14 @@ services:
       QUEUE_BULL_REDIS_HOST: redis
       QUEUE_BULL_REDIS_PORT: 6379
       QUEUE_BULL_REDIS_DB: 2
-      NODE_FUNCTION_ALLOW_EXTERNAL: moment,lodash,moment-with-locales
+      NODE_FUNCTION_ALLOW_EXTERNAL: moment
       EXECUTIONS_DATA_PRUNE: 'true'
       EXECUTIONS_DATA_MAX_AGE: 336
       N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: 'true'
       N8N_SECURE_COOKIE: "false"
+      N8N_RUNNERS_ENABLED: "true"
+      N8N_RUNNERS_MODE: internal
+      OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS: "true"
 
   
 
