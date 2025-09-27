@@ -1,6 +1,6 @@
 services:
   n8n_editor:
-    image: n8nio/n8n:1.100.1
+    image: n8nio/n8n:latest
     ports:
       - "5678:5678"      # Expondo a porta do editor
     volumes:
@@ -38,7 +38,7 @@ services:
 
       
   n8n_webhook:
-    image: n8nio/n8n:1.100.1
+    image: n8nio/n8n:latest
     command: webhook
     volumes:
       - n8n_data:/home/node/.n8n
@@ -74,7 +74,7 @@ services:
       OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS: "true"
 
   n8n_worker:
-    image: n8nio/n8n:1.100.1
+    image: n8nio/n8n:latest
     command: worker --concurrency=5
     volumes:
       - n8n_data:/home/node/.n8n
