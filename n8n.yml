@@ -18,11 +18,11 @@ services:
       DB_POSTGRESDB_USER: postgres
       DB_POSTGRESDB_PASSWORD: minha_senha
       N8N_ENCRYPTION_KEY: Y8Dmy5FhuRIDGIrs
-      N8N_HOST: 192.168.1.74:5678
-      N8N_EDITOR_BASE_URL: https://192.168.1.74:5678/
+      N8N_HOST: 192.168.0.5:5678
+      N8N_EDITOR_BASE_URL: https://192.168.0.5:5678/
       N8N_PROTOCOL: http
       NODE_ENV: production
-      WEBHOOK_URL: http://192.168.1.74:5678/
+      WEBHOOK_URL: http://192.168.0.5:5678/
       EXECUTIONS_MODE: queue
       QUEUE_BULL_REDIS_HOST: redis
       QUEUE_BULL_REDIS_PORT: 6379
@@ -55,11 +55,11 @@ services:
       DB_POSTGRESDB_USER: postgres
       DB_POSTGRESDB_PASSWORD: minha_senha
       N8N_ENCRYPTION_KEY: Y8Dmy5FhuRIDGIrs
-      N8N_HOST: 192.168.1.74:5678
-      N8N_EDITOR_BASE_URL: https://192.168.1.74:5678/
+      N8N_HOST: 192.168.0.5:5678
+      N8N_EDITOR_BASE_URL: https://192.168.0.5:5678/
       N8N_PROTOCOL: http
       NODE_ENV: production
-      WEBHOOK_URL: http://192.168.1.74:5678/
+      WEBHOOK_URL: http://192.168.0.5:5678/
       EXECUTIONS_MODE: queue
       QUEUE_BULL_REDIS_HOST: redis
       QUEUE_BULL_REDIS_PORT: 6379
@@ -89,11 +89,11 @@ services:
       DB_POSTGRESDB_USER: postgres
       DB_POSTGRESDB_PASSWORD: minha_senha
       N8N_ENCRYPTION_KEY: Y8Dmy5FhuRIDGIrs
-      N8N_HOST: 192.168.1.74:5678
-      N8N_EDITOR_BASE_URL: https://192.168.1.74:5678/
+      N8N_HOST: 192.168.0.5:5678
+      N8N_EDITOR_BASE_URL: https://192.168.0.5:5678/
       N8N_PROTOCOL: https
       NODE_ENV: production
-      WEBHOOK_URL: http://192.168.1.74:5678/
+      WEBHOOK_URL: http://192.168.0.5:5678/
       EXECUTIONS_MODE: queue
       QUEUE_BULL_REDIS_HOST: redis
       QUEUE_BULL_REDIS_PORT: 6379

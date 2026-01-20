@@ -3,28 +3,28 @@
 
 services:
   chatwoot-rails:
-    image: chatwoot/chatwoot:v4.0.3
+    image: chatwoot/chatwoot:v4.10.0
 
     environment:
 
       #configuracao SMTP
-      MAILER_SENDER_EMAIL: TITULO ASSUNTO EMAIL <andersonlemes50@gmail.com>
+      MAILER_SENDER_EMAIL: Chat <rapjuve.escuadron.pastores@gmail.com>
       SMTP_DOMAIN: gmail.com
       SMTP_ADDRESS: smtp.gmail.com
       SMTP_PORT: "587"
-      SMTP_USERNAME: seuemail@gmail.com
-      SMTP_PASSWORD: sua_senha
+      SMTP_USERNAME: rapjuve.escuadron.pastores@gmail.com
+      SMTP_PASSWORD: sqlzuaeircdbmuun
       SMTP_AUTHENTICATION: login
       SMTP_ENABLE_STARTTLS_AUTO: "true"
       SMTP_OPENSSL_VERIFY_MODE: "peer"
-      MAILER_INBOUND_EMAIL_DOMAIN: seudominio.com
+      MAILER_INBOUND_EMAIL_DOMAIN: siemprecampeones.com
       
       RAILS_ENV: "production"
       NODE_ENV: "production"
       INSTALLATION_ENV: "docker"
 
       SECRET_KEY_BASE: "chave_unica"
-      FRONTEND_URL: "http://192.168.1.74:3000"
+      FRONTEND_URL: "https://chat.siemprecampeones.com"
       ENABLE_ACCOUNT_SIGNUP: "false"
 
       # Banco e Redis (caso estejam em outro compose ou serviços)
@@ -38,10 +38,10 @@ services:
       # Configurações S3/MinIO
       ACTIVE_STORAGE_SERVICE: "s3_compatible"
       STORAGE_BUCKET_NAME: "chatwoot"
-      STORAGE_ACCESS_KEY_ID: "0XggPPlXeMJVsqoTblIz"
-      STORAGE_SECRET_ACCESS_KEY: "cO8lTX9wKcn3NBGdp2itSoV7skeqnizQsbKIRgfZ"
+      STORAGE_ACCESS_KEY_ID: "cP4nCeeMpsyk13r4TlQQ"
+      STORAGE_SECRET_ACCESS_KEY: "FQTR51j6RNnTpIdJzBYSifgYnMGPLoe1PHZHnDNl"
       STORAGE_REGION: "us-east-1"
-      STORAGE_ENDPOINT: "http://192.168.1.74:9002"
+      STORAGE_ENDPOINT: "https://miniostorage.siemprecampeones.com"
       STORAGE_FORCE_PATH_STYLE: "true"
       AWS_REGION: "us-east-1"
 
@@ -65,27 +65,27 @@ services:
     command: ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
 
   chatwoot-sidekiq:
-    image: chatwoot/chatwoot:v4.0.3
+    image: chatwoot/chatwoot:v4.10.0
 
     environment:
       #configuracao SMTP
-      MAILER_SENDER_EMAIL: TITULO ASSUNTO EMAIL <andersonlemes50@gmail.com>
+      MAILER_SENDER_EMAIL: Chat <rapjuve.escuadron.pastores@gmail.com>
       SMTP_DOMAIN: gmail.com
       SMTP_ADDRESS: smtp.gmail.com
       SMTP_PORT: "587"
-      SMTP_USERNAME: seuemail@gmail.com
-      SMTP_PASSWORD: sua_senha
+      SMTP_USERNAME: rapjuve.escuadron.pastores@gmail.com
+      SMTP_PASSWORD: sqlzuaeircdbmuun
       SMTP_AUTHENTICATION: login
       SMTP_ENABLE_STARTTLS_AUTO: "true"
       SMTP_OPENSSL_VERIFY_MODE: "peer"
-      MAILER_INBOUND_EMAIL_DOMAIN: seudominio.com
+      MAILER_INBOUND_EMAIL_DOMAIN: siemprecampeones.com
       
       RAILS_ENV: "production"
       NODE_ENV: "production"
       INSTALLATION_ENV: "docker"
 
       SECRET_KEY_BASE: "chave_unica"
-      FRONTEND_URL: "http://192.168.1.74:3000"
+      FRONTEND_URL: "http://192.168.0.5:3000"
       ENABLE_ACCOUNT_SIGNUP: "false"
 
       POSTGRES_HOST: "postgres"
@@ -100,7 +100,7 @@ services:
       STORAGE_ACCESS_KEY_ID: "0XggPPlXeMJVsqoTblIz"
       STORAGE_SECRET_ACCESS_KEY: "cO8lTX9wKcn3NBGdp2itSoV7skeqnizQsbKIRgfZ"
       STORAGE_REGION: "us-east-1"
-      STORAGE_ENDPOINT: "http://192.168.1.74:9002"
+      STORAGE_ENDPOINT: "http://192.168.0.5:9002"
       STORAGE_FORCE_PATH_STYLE: "true"
       AWS_REGION: "us-east-1"
 

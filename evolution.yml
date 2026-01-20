@@ -1,6 +1,6 @@
 services:
   evolution_v2:
-    image: atendai/evolution-api:v2.2.3
+    image: evoapicloud/evolution-api:v2.3.7
     container_name: evolution_aula
     ports:
       - 8080:8080
@@ -9,7 +9,7 @@ services:
     networks:
       - app_network
     environment:
-      - SERVER_URL=http://172.20.0.2:8080
+      - SERVER_URL=http://192.168.0.5:8080
       - DEL_INSTANCE=false
       - DEL_TEMP_INSTANCES=false
       - PROVIDER_ENABLED=false
@@ -105,8 +105,8 @@ services:
       - CACHE_REDIS_SAVE_INSTANCES=false
       - CACHE_LOCAL_ENABLED=false
       - S3_ENABLED=true
-      - S3_ACCESS_KEY=LnOfRyvjGQ7XWTidwfbj
-      - S3_SECRET_KEY=X22BmmluK6qFXduEsM54NOp9IHfToVNKt59iX4cM
+      - S3_ACCESS_KEY=0KcdtnOusrdQ86V80C9k
+      - S3_SECRET_KEY=YJmOjCpNboUC1TorYTbWCktxrV0lVWbHs0Rzb9UD
       - S3_BUCKET=evolution
       - S3_PORT=443
       - S3_ENDPOINT=minio
