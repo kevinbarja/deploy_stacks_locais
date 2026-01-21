@@ -105,12 +105,12 @@ services:
       - CACHE_REDIS_SAVE_INSTANCES=false
       - CACHE_LOCAL_ENABLED=false
       - S3_ENABLED=true
-      - S3_ACCESS_KEY=0KcdtnOusrdQ86V80C9k
-      - S3_SECRET_KEY=YJmOjCpNboUC1TorYTbWCktxrV0lVWbHs0Rzb9UD
+      - S3_ACCESS_KEY=cP4nCeeMpsyk13r4TlQQ
+      - S3_SECRET_KEY=FQTR51j6RNnTpIdJzBYSifgYnMGPLoe1PHZHnDNl
       - S3_BUCKET=evolution
       - S3_PORT=443
-      - S3_ENDPOINT=minio
-      - S3_PORT= 9000
+      - S3_ENDPOINT=miniostorage.siemprecampeones.com
+      #- S3_PORT= 9000
       - S3_USE_SSL=false
       - AUTHENTICATION_API_KEY=ies0F6xS9MTy8zxloNaJ5Ec3tyhuPA0f
       - AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES=true
