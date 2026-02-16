@@ -78,6 +78,61 @@
 
         10.3  Go to chatwoot admin panel [http://localhost:3000/installation/onboarding](http://localhost:3000/installation/onboarding).
 
+        10.4 [Enable chatwoot enterprise](https://youtu.be/1R9-tE4Nncs?si=cygwb0oVloa7_M1y):
+
+        10.5 Open terminal into postgres container `docker exec -it postgres_aula sh`
+
+        10.6 Login into psql and database:  `psql -U postgres -d chatwoot`
+
+        10.7 Execute queries:
+
+            UPDATE public.installation_configs
+            SET serialized_value = '{"value":"enterprise"}'
+            WHERE name = 'INSTALLATION_PRICING_PLAN';
+
+UPDATE public.installation_configs
+SET serialized_value = to_jsonb(
+'--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+value: enterprise
+'::text
+)
+WHERE name = 'INSTALLATION_PRICING_PLAN';
+
+
+            UPDATE public.installation_configs
+            SET serialized_value = '{"value":10000}'
+            WHERE name = 'INSTALLATION_PRICING_PLAN_QUANTITY';
+
+UPDATE public.installation_configs
+SET serialized_value = to_jsonb(
+'--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+value: 10000
+'::text
+)
+WHERE name = 'INSTALLATION_PRICING_PLAN_QUANTITY';
+
+
+            UPDATE public.installation_configs
+            SET serialized_value = '{"value":"e04t63ee-5gg8-4b94-8914-ed8137a7d938"}'
+            WHERE name = 'INSTALLATION_IDENTIFIER';
+
+UPDATE public.installation_configs
+SET serialized_value = to_jsonb(
+'--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+value: e04t63ee-5gg8-4b94-8914-ed8137a7d938
+'::text
+)
+WHERE name = 'INSTALLATION_IDENTIFIER';
+
+
+SELECT name, serialized_value
+FROM public.installation_configs
+WHERE name LIKE 'INSTALLATION_%';
+
+
+        10.8 Add this environment var with # in the end `CHATWOOT_HUB_URL: "https://chat.siemprecampeones.com/#"`
+
+
 11.  Open `n8n.yml file` and update `SERVER_URL` with current host local ip.
 
 12.  Up chatwoot `docker compose -f n8n.yml up -d`.

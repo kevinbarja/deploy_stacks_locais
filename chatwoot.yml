@@ -25,7 +25,6 @@ services:
 
       SECRET_KEY_BASE: "chave_unica"
       FRONTEND_URL: "https://chat.siemprecampeones.com"
-      ENABLE_ACCOUNT_SIGNUP: "false"
 
       # Banco e Redis (caso estejam em outro compose ou serviços)
       POSTGRES_HOST: "postgres"
@@ -53,6 +52,11 @@ services:
       # Logs
       RAILS_LOG_TO_STDOUT: "true"
       LOG_LEVEL: "info"
+      CHATWOOT_HUB_URL: "https://chat.siemprecampeones.com/#"
+      ENABLE_PUSH_RELAY_SERVER : "true"
+      ENABLE_ACCOUNT_SIGNUP: "false"
+      FIREBASE_PROJECT_ID: ""
+      FIREBASE_CREDENTIALS: ""      
 
     networks:
       - app_network
@@ -86,7 +90,6 @@ services:
 
       SECRET_KEY_BASE: "chave_unica"
       FRONTEND_URL: "http://192.168.0.5:3000"
-      ENABLE_ACCOUNT_SIGNUP: "false"
 
       POSTGRES_HOST: "postgres"
       POSTGRES_USERNAME: "postgres"
@@ -109,6 +112,11 @@ services:
 
       RAILS_LOG_TO_STDOUT: "true"
       LOG_LEVEL: "info"
+      CHATWOOT_HUB_URL: "https://chat.siemprecampeones.com/#"
+      ENABLE_PUSH_RELAY_SERVER : "true"
+      ENABLE_ACCOUNT_SIGNUP: "false"
+      FIREBASE_PROJECT_ID: ""
+      FIREBASE_CREDENTIALS: ""
 
     networks:
       - app_network
